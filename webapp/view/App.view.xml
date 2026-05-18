@@ -1,0 +1,9 @@
+<mvc:View
+    controllerName="sap.suite.ui.commons.demo.tutorial.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="tutorialApp"
+         backgroundImage="images/startpage.jpg"
+         backgroundOpacity="0.3"/>
+</mvc:View>
