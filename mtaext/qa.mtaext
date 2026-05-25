@@ -1,0 +1,20 @@
+_schema-version: "3.2"
+ID: sapsuiteuicommonsdemotutorial-qa
+
+extends: sapsuiteuicommonsdemotutorial
+
+resources:
+
+  - name: sapsuiteuicommonsdemotutorial-destination-service
+    parameters:
+      service-name: sapsuiteuicommonsdemotutorial-destination-service-qa
+
+  - name: sapsuiteuicommonsdemotutorial-uaa
+    parameters:
+      service-name: sapsuiteuicommonsdemotutorial-xsuaa-service-qa
+      config:
+        xsappname: sapsuiteuicommonsdemotutorial-qa
+
+  - name: sapsuiteuicommonsdemotutorial-repo-host
+    parameters:
+      service-name: sapsuiteuicommonsdemotutorial-html5-service-qa
