@@ -1,5 +1,5 @@
 {
-  "xsappname": "sapsuiteuicommonsdemotutorial",
+  "xsappname": "${xsappname}",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
   "scopes": [],
