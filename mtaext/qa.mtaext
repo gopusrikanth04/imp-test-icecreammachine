@@ -18,3 +18,20 @@ resources:
   - name: sapsuiteuicommonsdemotutorial-repo-host
     parameters:
       service-name: sapsuiteuicommonsdemotutorial-html5-service-qa
+
+modules:
+  - name: sapsuiteuicommonsdemotutorial-destination-content
+    parameters:
+      content:
+        instance:
+          destinations:
+            - Name: sapsuiteuicommonsdemotutorial_html_repo_host
+              ServiceInstanceName: sapsuiteuicommonsdemotutorial-html5-service-qa
+              ServiceKeyName: sapsuiteuicommonsdemotutorial-repo-host-key
+              sap.cloud.service: sapsuiteuicommonsdemotutorial
+
+            - Authentication: OAuth2UserTokenExchange
+              Name: sapsuiteuicommonsdemotutorial_uaa
+              ServiceInstanceName: sapsuiteuicommonsdemotutorial-xsuaa-service-qa
+              ServiceKeyName: sapsuiteuicommonsdemotutorial-uaa-key
+              sap.cloud.service: sapsuiteuicommonsdemotutorial
