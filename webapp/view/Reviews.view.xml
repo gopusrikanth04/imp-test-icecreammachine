@@ -11,6 +11,14 @@
 		<Toolbar>
 			<Label text="{i18n>layoutSwitchLabel}" />
 			<Switch change=".onHorizontalSwitchChange" />
+			<ToolbarSpacer />
+			<Label text="{i18n>minRatingFilterLabel}" />
+			<StepInput
+				id="minRatingInput"
+				min="0"
+				max="10"
+				value="0"
+				change=".onMinRatingChange" />
 		</Toolbar>
 		<suite:Timeline
 			id="timeline"

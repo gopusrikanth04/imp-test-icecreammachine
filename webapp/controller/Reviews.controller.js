@@ -46,6 +46,18 @@ sap.ui.define([
 			} else {
 				this.oTimeline.setAxisOrientation("Vertical");
 			}
+		},
+
+		onMinRatingChange: function(oEvent) {
+			var iMinRating = oEvent.getParameter("value"),
+				oModel = this.getView().getModel("reviews"),
+				oData = oModel.getData();
+
+			oData.UserReviews = oData.UserReviews.filter(function(oReview) {
+				return oReview.rating >= iMinRating;
+			});
+
+			oModel.setData(oData);
 		}
 	});
 });
