@@ -13,6 +13,7 @@
     "@ui5/cli": "^4.0.33",
     "@sap/ux-ui5-tooling": "1",
     "@sap-ux/eslint-plugin-fiori-tools": "^10.0.0",
+    "cross-var": "^1.1.0",
     "eslint": "^10",
     "ui5-task-zipper": "^3.4.x",
     "rimraf": "^5.0.5",
@@ -30,10 +31,14 @@
     "start-variants-management": "fiori run --open \"/preview.html#app-preview\"",
     "unit-test": "fiori run --open \"test/unit/unitTests.qunit.html\"",
     "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo",
-    "build:mta": "rimraf resources mta_archives && mbt build",
     "undeploy": "cf undeploy sapsuiteuicommonsdemotutorial --delete-services --delete-service-keys --delete-service-brokers",
     "sri_unit-test": "fiori run --open \"test/Test.qunit.html\"",
-    "sri_int-test": "fiori run --open \"test/testsuite.qunit.html\""
+    "sri_int-test": "fiori run --open \"test/testsuite.qunit.html\"",
+    "build:mta": "mbt build",
+    "deploy:cf": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar",
+    "deploy:cf-dev": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/dev.mtaext",
+    "deploy:cf-qa": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/qa.mtaext",
+    "deploy:cf-prod": "cross-var cf deploy mta_archives/sapsuiteuicommonsdemotutorial_$npm_package_version.mtar -e mtaext/prod.mtaext"
   },
   "sapuxLayer": "CUSTOMER_BASE"
 }
