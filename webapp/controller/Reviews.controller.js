@@ -105,6 +105,17 @@ sap.ui.define([
 			});
 
 			oModel.setData(oData);
+		},
+		onMinRatingChange7: function(oEvent) {
+			var iMinRating = oEvent.getParameter("value"),
+				oModel = this.getView().getModel("reviews"),
+				oData = oModel.getData();
+
+			oData.UserReviews = oData.UserReviews.filter(function(oReview) {
+				return oReview.rating >= iMinRating;
+			});
+
+			oModel.setData(oData);
 		}
 	});
 });
