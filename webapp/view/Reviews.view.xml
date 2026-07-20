@@ -18,7 +18,7 @@
 				min="0"
 				max="10"
 				value="0"
-				change=".onMinRatingChange1" />
+				change=".onMinRatingChange5" />
 		</Toolbar>
 		<suite:Timeline
 			id="timeline"
