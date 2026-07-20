@@ -10,6 +10,25 @@ sap.ui.define([
 		onNavButtonPressed: function() {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.navTo("home");
+		},
+
+		/**
+		 * Determines the visual state for a temperature reading based on its deviation from target.
+		 *
+		 * @param {float} fTemperature Measured temperature
+		 * @param {float} fTarget Target temperature
+		 * @returns {string} sap.ui.core.ValueState-compatible state
+		 */
+		getTemperatureState: function(fTemperature, fTarget) {
+			var fDeviation = Math.abs(fTemperature - fTarget);
+
+			if (fDeviation <= 0.5) {
+				return "Success";
+			} else if (fTemperature > fTarget) {
+				return fDeviation <= 1.5 ? "Warning" : "Error";
+			} else {
+				return fDeviation <= 1.5 ? "Warning" : "Error";
+			}
 		}
 	});
 });

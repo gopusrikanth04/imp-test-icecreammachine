@@ -49,7 +49,12 @@
 									<ColumnListItem>
 										<cells>
 											<Text text="{id}" />
-											<Text text="{temperature}" />
+											<ObjectStatus
+												text="{temperature}"
+												state="{
+													parts: ['temperature', 'target'],
+													formatter: '.getTemperatureState'
+												}" />
 											<Text text="{target}" />
 										</cells>
 									</ColumnListItem>
