@@ -39,6 +39,23 @@ sap.ui.define([
 		 */
 		getValuesDelta: function(fFirstValue, fSecondValue) {
 			return fSecondValue - fFirstValue;
+		},
+
+		/**
+		 * Builds the Process Flow panel header, appending a count of currently delayed steps.
+		 *
+		 * @param {string} sTitle Base panel title
+		 * @param {object[]} aNodes Process workflow nodes
+		 * @returns {string} Panel header text including the delayed step count
+		 */
+		getProcessPanelHeaderText: function(sTitle, aNodes) {
+			var iDelayed = 0;
+			for (var i = 0; i < aNodes.length; i++) {
+				if (aNodes[i].state === "Negative") {
+					iDelayed++;
+				}
+			}
+			return sTitle + " (" + iDelayed + " delayed)";
 		}
 	});
 });

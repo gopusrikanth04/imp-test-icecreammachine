@@ -142,7 +142,10 @@
 					</m:HeaderContainer>
 				</m:headerContainer>
 			</m:ObjectHeader>
-			<m:Panel headerText="{i18n>processFlowProcessTitle}">
+			<m:Panel headerText="{
+				parts: ['i18n>processFlowProcessTitle', 'process>/Nodes'],
+				formatter: '.getProcessPanelHeaderText'
+			}">
 				<ProcessFlow
 					id="processflow1"
 					scrollable="false"
