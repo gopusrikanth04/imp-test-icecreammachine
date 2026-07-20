@@ -114,7 +114,7 @@
 						backgroundImage="{news>image}"
 						state="{news>state}"
 						frameType="TwoByOne"
-						press=".onNavToReviews">
+						press=".onNewsPressed">
 						<tileContent>
 							<TileContent
 								footer="{

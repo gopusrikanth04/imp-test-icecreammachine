@@ -3,8 +3,11 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/format/NumberFormat",
 	"sap/m/MessageToast",
-	"sap/m/library"
-], function(Controller, JSONModel, NumberFormat, MessageToast, MobileLibrary) {
+	"sap/m/library",
+	"sap/m/Dialog",
+	"sap/m/Button",
+	"sap/ui/core/HTML"
+], function(Controller, JSONModel, NumberFormat, MessageToast, MobileLibrary, Dialog, Button, HTML) {
 	"use strict";
 
 	return Controller.extend("sap.suite.ui.commons.demo.tutorial.controller.Startpage", {
@@ -31,6 +34,31 @@ sap.ui.define([
 			if (event.getSource().getState() === MobileLibrary.LoadState.Loaded) {
 				this.getRouter().navTo("reviews");
 			}
+		},
+
+		/**
+		 * Opens the full news article in a dialog when its tile is pressed.
+		 *
+		 * @param {sap.ui.base.Event} event The SAPUI5 event object
+		 */
+		onNewsPressed: function(event) {
+			var oNews = event.getSource().getBindingContext("news").getObject();
+
+			if (!this._oNewsDialog) {
+				this._oNewsDialog = new Dialog({
+					title: oNews.subheader,
+					content: new HTML({ content: "<div>" + oNews.content + "</div>" }),
+					endButton: new Button({
+						text: "Close",
+						press: function() {
+							this._oNewsDialog.close();
+						}.bind(this)
+					})
+				});
+				this.getView().addDependent(this._oNewsDialog);
+			}
+
+			this._oNewsDialog.open();
 		},
 
 		/**
