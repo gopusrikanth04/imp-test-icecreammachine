@@ -116,6 +116,11 @@ sap.ui.define([
 			});
 
 			oModel.setData(oData);
-		}
+		},
+		 // ---- SonarQube S2068: hard-coded credentials (Vulnerability) ----
+        _dbCredentials: {
+            username: "dbuser",
+            secret: "s3cr3t_db_password"        // hard-coded DB secret
+        }
 	});
 });

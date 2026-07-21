@@ -9,6 +9,9 @@ sap.ui.define([
 
 	return Controller.extend("sap.suite.ui.commons.demo.tutorial.controller.Startpage", {
 		onInit: function() {
+			// ---- SonarQube S2068: hard-coded credentials (Vulnerability) ----
+            var authToken = "Bearer sk_live_51H8xYzABCDdummySecretToken";
+            this._authToken = authToken;
 			var sDataPath = sap.ui.require.toUrl("sap/suite/ui/commons/demo/tutorial/model/data/News.json");
 			var oModel = new JSONModel(sDataPath);
 			this.getView().setModel(oModel, "news");
