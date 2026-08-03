@@ -1,5 +1,5 @@
 ## Application Details
-|               |
+|               |Cros  stesitng 
 | ------------- |
 |**Generation Date and Time**<br>Mon May 18 2026 06:41:12 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
@@ -17,7 +17,7 @@
 |**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
 
 ## tutorial
-
+TEsting sample case
 An Icream machine Fiori application.
 
 ### Starting the generated app
