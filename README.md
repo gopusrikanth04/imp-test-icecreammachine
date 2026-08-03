@@ -17,7 +17,7 @@
 |**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
 
 ## tutorial
-
+TEsting sample case
 An Icream machine Fiori application.
 
 ### Starting the generated app
