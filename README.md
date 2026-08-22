@@ -2,7 +2,7 @@
 |               |Cros  stesitng Testing with build source is an userstory
 | ------------- |
 |**Generation Date and Time**<br>Mon May 18 2026 06:41:12 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>SAP Fiori Application Generator|
+|**App Generator**<br>SAP Fiori Application Generator| cap testing with feature branch changes 
 |**App Generator Version**<br>1.24.0|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>Basic|
