@@ -71,6 +71,13 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            Name: audit-backend
+            ProxyType: Internet
+            Type: HTTP
+            URL: http://quality-audit.internal.acme-icecream.corp
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
           existing_destinations_policy: update
       version: 1.0.0
     service: destination

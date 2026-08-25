@@ -135,6 +135,11 @@
           "pattern": "reviews",
           "name": "reviews",
           "target": "reviews"
+        },
+        {
+          "pattern": "supplierAudit",
+          "name": "supplierAudit",
+          "target": "supplierAudit"
         }
       ],
       "targets": {
@@ -152,6 +157,10 @@
 				},
 				"reviews": {
 					"viewName": "Reviews",
+					"viewLevel": 1
+				},
+				"supplierAudit": {
+					"viewName": "SupplierAudit",
 					"viewLevel": 1
 				}
       }

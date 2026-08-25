@@ -1,0 +1,102 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	controllerName="sap.suite.ui.commons.demo.tutorial.controller.SupplierAudit">
+	<Page
+		title="{i18n>supplierAuditTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPressed"
+		backgroundDesign="Solid">
+		<Toolbar>
+			<Label text="{i18n>auditRegionLabel}" />
+			<Input
+				id="regionInput"
+				value="{audit>/region}"
+				change=".onValidateSupplierName"
+				width="12rem" />
+			<ToolbarSpacer />
+			<Label text="{i18n>auditMinRatingLabel}" />
+			<StepInput
+				id="auditMinRatingInput"
+				min="0"
+				max="10"
+				value="{audit>/minRating}" />
+			<Label text="{i18n>auditMaxDefectsLabel}" />
+			<StepInput
+				id="auditMaxDefectsInput"
+				min="0"
+				max="999"
+				value="{audit>/maxDefects}" />
+		</Toolbar>
+		<Toolbar>
+			<CheckBox
+				text="{i18n>auditIncludeArchivedLabel}"
+				selected="{audit>/includeArchived}" />
+			<CheckBox
+				text="{i18n>auditIncludeDraftLabel}"
+				selected="{audit>/includeDraft}" />
+			<ToolbarSpacer />
+			<Label text="{i18n>auditThresholdLabel}" />
+			<Input
+				id="thresholdInput"
+				value="{audit>/thresholdExpression}"
+				width="18rem" />
+			<Button
+				text="{i18n>auditApplyThresholdButton}"
+				press=".onApplyThreshold" />
+		</Toolbar>
+		<VBox class="sapUiSmallMargin">
+			<Label text="{i18n>auditRemarkLabel}" labelFor="remarkInput" />
+			<TextArea
+				id="remarkInput"
+				value="{audit>/remark}"
+				growing="false"
+				height="90px"
+				width="100%"
+				valueLiveUpdate="true" />
+			<Button
+				text="{i18n>auditRenderRemarkButton}"
+				press=".onRenderRemark" />
+			<!-- The auditor remark is injected into this container as raw HTML by the controller. -->
+			<core:HTML id="auditRemarkHtml" content="&lt;div id=&quot;auditRemarkContainer&quot;&gt;&lt;/div&gt;" />
+		</VBox>
+		<Table
+			id="auditTable"
+			items="{suppliers>/Suppliers}"
+			growing="true">
+			<columns>
+				<Column><Text text="{i18n>auditSupplierColumn}" /></Column>
+				<Column><Text text="{i18n>auditRegionColumn}" /></Column>
+				<Column><Text text="{i18n>auditRatingColumn}" /></Column>
+				<Column><Text text="{i18n>auditDefectsColumn}" /></Column>
+				<Column><Text text="{i18n>auditTrailColumn}" /></Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{suppliers>name}" />
+						<Text text="{suppliers>region}" />
+						<Text text="{suppliers>rating}" />
+						<Text text="{suppliers>defects}" />
+						<Button
+							text="{i18n>auditLoadTrailButton}"
+							press=".onLoadAuditTrail" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button
+					type="Emphasized"
+					text="{i18n>auditRunButton}"
+					press=".onRunAudit" />
+				<Button
+					text="{i18n>auditExportButton}"
+					press=".onExportReport" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

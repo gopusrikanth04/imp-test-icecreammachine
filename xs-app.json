@@ -15,6 +15,21 @@
       "destination": "ui5"
     },
     {
+      "source": "^/audit-api/(.*)$",
+      "target": "/api/v1/$1",
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "destination": "audit-backend"
+    },
+    {
+      "source": "^/audit-export/(.*)$",
+      "target": "/export/$1",
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "scope": "$XSAPPNAME.AuditAdmin",
+      "destination": "audit-backend"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",
