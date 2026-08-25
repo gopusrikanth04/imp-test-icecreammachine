@@ -2,6 +2,22 @@
   "xsappname": "${xsappname}",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.AuditAdmin",
+      "description": "Full read and export access to the supplier quality audit",
+      "grant-as-authority-to-apps": [
+        "$XSAPPNAME"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.AuditExport",
+      "description": "Export supplier quality audit reports"
+    }
+  ],
+  "authorities": [
+    "$XSAPPNAME.AuditAdmin",
+    "$XSAPPNAME.AuditExport"
+  ],
   "role-templates": []
 }

@@ -3,18 +3,39 @@
 	"Suppliers": [
 		{
 			"id": "Super Supplier 3000",
+			"name": "Super Supplier 3000",
 			"deliveryTime": 2,
-			"deliveryTimeSemantics": "Good"
+			"deliveryTimeSemantics": "Good",
+			"region": "EMEA",
+			"rating": 9,
+			"defects": 1,
+			"archived": false,
+			"draft": false,
+			"tags": ["dairy,cold chain"]
 		},
 		{
 			"id": "Ice Ice Adult - Ice Cream Trucks",
+			"name": "Ice Ice Adult - Ice Cream Trucks",
 			"deliveryTime": 8,
-			"deliveryTimeSemantics": "Critical"
+			"deliveryTimeSemantics": "Critical",
+			"region": "AMER",
+			"rating": 4,
+			"defects": 27,
+			"archived": false,
+			"draft": true,
+			"tags": ["logistics,fleet"]
 		},
 		{
 			"id": "Frozen Rock",
+			"name": "Frozen Rock",
 			"deliveryTime": 3,
-			"deliveryTimeSemantics": "Good"
+			"deliveryTimeSemantics": "Good",
+			"region": "APJ",
+			"rating": 7,
+			"defects": 4,
+			"archived": true,
+			"draft": false,
+			"tags": ["packaging"]
 		}
 	]
 }

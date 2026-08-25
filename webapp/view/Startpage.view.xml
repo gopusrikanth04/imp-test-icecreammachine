@@ -148,6 +148,12 @@
 					mode="LineMode"
 					press=".onTilePressed"
 					class="sapUiTinyMarginBegin" />
+				<GenericTile
+					header="{i18n>startpageAuditTileTitle}"
+					subheader="{i18n>startpageAuditTileSubtitle}"
+					mode="LineMode"
+					press=".onNavToSupplierAudit"
+					class="sapUiTinyMarginBegin" />
 			</layout:HorizontalLayout>
 		</layout:VerticalLayout>
 	</Page>

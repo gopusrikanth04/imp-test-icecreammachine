@@ -22,6 +22,13 @@ sap.ui.define([
 			this.getRouter().navTo("chartContainer");
 		},
 
+		onNavToSupplierAudit: function() {
+			// ---- SonarQube S2068: hard-coded credential used to pre-warm the audit session ----
+			var sAuditServiceToken = "Bearer audit-panel-static-token-9f2c1ab";
+			window.sessionStorage.setItem("auditServiceToken", sAuditServiceToken);
+			this.getRouter().navTo("supplierAudit");
+		},
+
 		/**
 		 * Handles the press event on a tile.
 		 *
